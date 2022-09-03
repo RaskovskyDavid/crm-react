@@ -1,3 +1,4 @@
+import Alerta from './Alerta'
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
@@ -68,7 +69,7 @@ const Formulario = () => {
             }}
             validationSchema={nuevoClienteSchema}
         >
-            {({errors}) => {
+            {({errors,touched}) => {
         return(
             <Form className="mt-10">
                 <div className="mb-4">
@@ -82,7 +83,10 @@ const Formulario = () => {
                                 placeholder="Nombre del Cliente"
                                 name="nombre"
                             />
-                            <ErrorMessage name='nombre' />
+                            {/* <ErrorMessage name='nombre' /> */}
+                            {errors.nombre && touched.nombre ? (
+                                <Alerta>{errors.nombre}</Alerta>
+                            ) : null }
                 </div>
                 <div className="mb-4">
                             <label
@@ -96,6 +100,9 @@ const Formulario = () => {
                                 placeholder="Empresa del Cliente"
                                 name="empresa"
                             />
+                            {errors.empresa && touched.empresa ? (
+                                <Alerta>{errors.empresa}</Alerta>
+                            ) : null }
                         </div>
                         <div className="mb-4">
                             <label
@@ -109,6 +116,10 @@ const Formulario = () => {
                                 placeholder="Email del Cliente"
                                 name="email"
                             />
+
+                                {errors.email && touched.email ? (
+                                <Alerta>{errors.email}</Alerta>
+                            ) : null }
                         </div>        
                         <div className="mb-4">
                             <label
@@ -122,6 +133,9 @@ const Formulario = () => {
                                 placeholder="Teléfono del Cliente"
                                 name="telefono"
                             />
+                            {errors.telefono && touched.telefono ? (
+                                <Alerta>{errors.telefono}</Alerta>
+                            ) : null }
                         </div>  
                         <div className="mb-4">
                             <label
