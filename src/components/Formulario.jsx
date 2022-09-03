@@ -1,6 +1,23 @@
 import React from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 const Formulario = () => {
+    const nuevoClienteSchema = Yup.object().shape({
+        nombre: Yup.string()
+                    .min(3, 'El Nombre es muy corto')
+                    .max(20, 'El Nombre es muy largo')
+                    .required('El Nombre del Cliente es Obligatorio'),
+        empresa: Yup.string()
+                    .required('El Nombre de la empresa es obligatorio'),
+        email: Yup.string()
+                    .email('Email no válido')
+                    .required('El email es obligatorio'),
+        telefono: Yup.number()
+                    .positive('Número no válido')
+                    .integer('Número no válido')
+                    .typeError('El Número no es válido')
+        
+    })
     const handleSubmit = async (valores) => {
         // try {
         //     let respuesta 
@@ -49,8 +66,10 @@ const Formulario = () => {
                 await handleSubmit(values)
                 resetForm()
             }}
+            validationSchema={nuevoClienteSchema}
         >
-            {() => (
+            {({errors}) => {
+        return(
             <Form className="mt-10">
                 <div className="mb-4">
                 <label className="text-gray-800"
@@ -63,6 +82,7 @@ const Formulario = () => {
                                 placeholder="Nombre del Cliente"
                                 name="nombre"
                             />
+                            <ErrorMessage name='nombre' />
                 </div>
                 <div className="mb-4">
                             <label
@@ -123,7 +143,7 @@ const Formulario = () => {
                         />    
                         </div>        
             </Form>
-             )}
+             )}}
         </Formik>
       
     </div>
