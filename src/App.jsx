@@ -14,11 +14,11 @@ function App() {
     <BrowserRouter>
       <div>
         <h1>Hello, React Router!</h1>
-        <Routes>
+        {/* <Routes>
           <Route path='/' element={<IniciarSesion/>}>
           <Route index element={<LoginForm />} />
           </Route>
-        </Routes>
+        </Routes> */}
         <Routes>
           <Route path="/clientes" element={<Layout />}>
             <Route index element={<Inicio />} />
