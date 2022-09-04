@@ -20,36 +20,38 @@ const Formulario = () => {
         
     })
     const handleSubmit = async (valores) => {
-        // try {
+        try {
         //     let respuesta 
         //     if(cliente.id) {
         //         // Editando un registro
-        //         const url = `${import.meta.env.VITE_API_URL}/${cliente.id}`
-        //         respuesta = await fetch(url, {
-        //             method: 'PUT',
-        //             body: JSON.stringify(valores),
-        //             headers: {
-        //                 'Content-Type': 'application/json'
-        //             }
-        //         })
+                // const url = `${import.meta.env.VITE_API_URL}/${cliente.id}`
+                // const url = "http://localhost:4000/clientes"
+                // respuesta = await fetch(url, {
+                //     method: 'PUT',
+                //     body: JSON.stringify(valores),
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     }
+                // })
 
         //     } else {
         //         // Nuevo Registro
-        //         const url = import.meta.env.VITE_API_URL
-        //         respuesta = await fetch(url, {
-        //             method: 'POST',
-        //             body: JSON.stringify(valores),
-        //             headers: {
-        //                 'Content-Type': 'application/json'
-        //             }
-        //         })
+                // const url = import.meta.env.VITE_API_URL
+                const url = "http://localhost:4000/clientes"
+                respuesta = await fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(valores),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
         //     }
 
-        //     await respuesta.json()
+            await respuesta.json()
         //     navigate('/clientes')
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        } catch (error) {
+            console.log(error)
+        }
     }
   return (
     <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-md 

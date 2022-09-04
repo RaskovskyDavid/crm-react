@@ -13,7 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <h1>Hello, React Router!</h1>
         {/* <Routes>
           <Route path='/' element={<IniciarSesion/>}>
           <Route index element={<LoginForm />} />

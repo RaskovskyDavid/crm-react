@@ -1,0 +1,12 @@
+{
+  "clientes": [
+    {
+      "nombre": "DAVID ARIEL",
+      "empresa": "MiRey",
+      "email": "david.raskovsky@accenture.com",
+      "telefono": "3815904681",
+      "notas": "",
+      "id": 1
+    }
+  ]
+}
