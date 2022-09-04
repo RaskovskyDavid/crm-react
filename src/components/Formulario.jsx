@@ -1,8 +1,10 @@
 import Alerta from './Alerta'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 const Formulario = () => {
+    const navigate = useNavigate()
     const nuevoClienteSchema = Yup.object().shape({
         nombre: Yup.string()
                     .min(3, 'El Nombre es muy corto')
@@ -48,7 +50,7 @@ const Formulario = () => {
         //     }
 
             await respuesta.json()
-        //     navigate('/clientes')
+            navigate('/clientes')
         } catch (error) {
             console.log(error)
         }
