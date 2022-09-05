@@ -7,6 +7,30 @@
       "telefono": "3815904681",
       "notas": "",
       "id": 1
+    },
+    {
+      "nombre": "DAVID ARIEL",
+      "empresa": "MiRey",
+      "email": "raskovskydavid@gmail.com",
+      "telefono": "3815904681",
+      "notas": "asdfsa",
+      "id": 2
+    },
+    {
+      "nombre": "Estela",
+      "empresa": "MiRey",
+      "email": "bernardo@pixelario.com.ar",
+      "telefono": "3815904681",
+      "notas": "sdfca",
+      "id": 3
+    },
+    {
+      "nombre": "DAVID ARIEL",
+      "empresa": "MiRey",
+      "email": "bernardo@pixelario.com.ar",
+      "telefono": "3815904681",
+      "notas": "afd",
+      "id": 4
     }
   ]
 }
