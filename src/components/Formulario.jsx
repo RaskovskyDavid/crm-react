@@ -23,20 +23,20 @@ const Formulario = ({cliente, cargando}) => {
     })
     const handleSubmit = async (valores) => {
         try {
-        //     let respuesta 
-        //     if(cliente.id) {
-        //         // Editando un registro
+            let respuesta 
+            if(cliente.id) {
+                // Editando un registro
                 // const url = `${import.meta.env.VITE_API_URL}/${cliente.id}`
-                // const url = "http://localhost:4000/clientes"
-                // respuesta = await fetch(url, {
-                //     method: 'PUT',
-                //     body: JSON.stringify(valores),
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //     }
-                // })
+                const url =`http://localhost:4000/clientes/${cliente.id}`
+                respuesta = await fetch(url, {
+                    method: 'PUT',
+                    body: JSON.stringify(valores),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
 
-        //     } else {
+            } else {
         //         // Nuevo Registro
                 // const url = import.meta.env.VITE_API_URL
                 const url = "http://localhost:4000/clientes"
@@ -47,7 +47,7 @@ const Formulario = ({cliente, cargando}) => {
                         'Content-Type': 'application/json'
                     }
                 })
-        //     }
+            }
 
             await respuesta.json()
             navigate('/clientes')
