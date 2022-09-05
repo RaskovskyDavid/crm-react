@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Spinner from '../components/Spinner'
 // import Spinner from '../components/Spinner'
 
 const VerCliente = () => {
@@ -27,9 +28,9 @@ const VerCliente = () => {
     }, [])
 
     return (
-        // cargando ? <Spinner /> : 
-            // Object.keys(cliente).length === 0 ? 
-            // <p>No Hay Resultados</p> :
+        cargando ? <Spinner /> : 
+            Object.keys(cliente).length === 0 ? 
+            <p>No Hay Resultados</p> :
              (
                 <div>
                     <h1 className="font-black text-4xl text-blue-900">Ver Cliente: {cliente.nombre}</h1>
